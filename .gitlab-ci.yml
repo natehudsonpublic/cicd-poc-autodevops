@@ -55,6 +55,7 @@ stages:
   - test
   - review
   - dast
+  - develop
   - staging
   - canary
   - production
@@ -277,6 +278,26 @@ staging:
     kubernetes: active
     variables:
       - $STAGING_ENABLED
+
+develop:
+  stage: develop
+  script:
+    - check_kube_domain
+    - install_dependencies
+    - download_chart
+    - ensure_namespace
+    - install_tiller
+    - create_secret
+    - deploy
+  environment:
+    name: develop
+    url: http://$CI_PROJECT_PATH_SLUG-develop.$AUTO_DEVOPS_DOMAIN
+  only:
+    refs:
+      - develop
+    kubernetes: active
+    #variables:
+    #  - $STAGING_ENABLED
 
 # Canaries are also disabled by default, but if you want them,
 # and know what the downsides are, you can enable this by setting
