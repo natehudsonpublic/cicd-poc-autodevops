@@ -3,7 +3,7 @@
 const express = require('express');
 
 // Constants
-const PORT = 8080;
+const PORT = 5000;
 const HOST = '0.0.0.0';
 const GIT_SHA = process.env.GIT_SHA || 'undefined_sha';
 const GIT_BRANCH = process.env.GIT_BRANCH || 'undefined_branch';
