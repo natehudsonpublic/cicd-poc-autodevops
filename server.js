@@ -14,7 +14,7 @@ const app = express();
 //console.log(process.env);
 
 app.get('/', (req, res) => {
-  res.send('<img src="https://shift.io/images/logo.svg"><h1>CI/CD PoC AutoDevops</h1>\n<br \><pre>sha:'+GIT_SHA+'</pre><pre>branch:'+GIT_BRANCH+'</pre>');
+  res.send('<img src="https://shift.io/images/logo.svg"><h1>CI/CD PoC AutoDevops</h1>\n<br \><pre>sha:'+GIT_SHA+'</pre><pre>branch:'+GIT_BRANCH+'</pre>feature1');
 });
 
 app.get('/healthCheck', (req, res) => {
