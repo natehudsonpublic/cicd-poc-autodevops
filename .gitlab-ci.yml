@@ -696,7 +696,8 @@ rollout 100%:
 
     if [[ -f Dockerfile ]]; then
       echo "Building Dockerfile-based application..."
-      docker build -t "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG" .
+      #docker build -t "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG" .
+      make build
     else
       echo "Building Heroku-based application using gliderlabs/herokuish docker image..."
       docker run -i --name="$CI_CONTAINER_NAME" -v "$(pwd):/tmp/app:ro" gliderlabs/herokuish /bin/herokuish buildpack build
