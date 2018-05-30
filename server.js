@@ -15,7 +15,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   var html = '<html><head><title>CICD PoC1 AutoDevops</title></head>\n';
-  html += '<style>body { background-color: white; } </style>\n';
+  html += '<style>body { background-color: pink; } </style>\n';
   html += '<body>\n';
   html += '<img src="https://shift.io/images/logo.svg"><h1>CI/CD PoC1 AutoDevops</h1>\n';
   html += '</body></html>\n';
