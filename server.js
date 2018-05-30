@@ -14,11 +14,18 @@ const app = express();
 //console.log(process.env);
 
 app.get('/', (req, res) => {
-  res.send('<img src="https://shift.io/images/logo.svg"><h1>CI/CD PoC AutoDevops</h1>\n<br \><pre>sha:'+GIT_SHA+'</pre><pre>branch:'+GIT_BRANCH+'</pre>feature1<br>prod');
+  var html = '<html><head><title>CICD PoC1 AutoDevops</title></head>\n';
+  html += '<style>body { background-color: white; } </style>\n';
+  html += '<body>\n';
+  html += '<img src="https://shift.io/images/logo.svg"><h1>CI/CD PoC1 AutoDevops</h1>\n';
+  html += '</body></html>\n';
+  res.send(html);
+  console.log('served /');
 });
 
 app.get('/healthCheck', (req, res) => {
   res.send('healthy\n');
+  console.log('served /healthCheck');
 });
 
 app.listen(PORT, HOST);
